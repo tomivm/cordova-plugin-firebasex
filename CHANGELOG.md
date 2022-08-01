@@ -1,3 +1,8 @@
+# Version 14.2.1-cli
+* (iOS) bugfix: remove openURL delegate that was erroneously re-added by merge error.
+    * Re-implements PR [#731](https://github.com/dpa99c/cordova-plugin-firebasex/pull/731)
+    * Resolves [#718](https://github.com/dpa99c/cordova-plugin-firebasex/issues/718)
+
 # Version 14.2.0-cli
 * (Android) bugfix: Fix no notifications on Android 12 and above
     * Merged from PR [#747](https://github.com/dpa99c/cordova-plugin-firebasex/pull/747)
