@@ -1,3 +1,11 @@
+# Version 16.0.0-cli
+* (iOS & Android) **BREAKING CHANGE**: Changed signature of `verifyPhoneNumber()` to pass optional arguments as an object.
+* (iOS & Android) feat: Add support for multi-factor authentication
+     * Added `enrollSecondAuthFactor()`, `verifySecondAuthFactor()`, `listEnrolledSecondAuthFactors()`, `unenrollSecondAuthFactor()`, `verifyBeforeUpdateEmail()`
+     * Resolves [#714](https://github.com/dpa99c/cordova-plugin-firebasex/issues/714)
+* (iOS & Android) feat: Add `authenticateUserWithFacebook()`
+	* Resolves [#526](https://github.com/dpa99c/cordova-plugin-firebasex/issues/526)
+
 # Version 15.0.0-cli
 * (Android) Update pinned Firebase SDK component versions to [BOM v31.1.0 - November 17, 2022](https://firebase.google.com/support/release-notes/android#2022-11-17)
 * (iOS) Update pinned version of Firebase SDK to [v10.2.0 - November 15, 2022](https://firebase.google.com/support/release-notes/ios#version_1020_-_november_15_2022)
