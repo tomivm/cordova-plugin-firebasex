@@ -740,6 +740,19 @@ public class FirebasePlugin extends CordovaPlugin {
             public void run() {
                 try {
                     handleTaskOutcome(FirebaseMessaging.getInstance().deleteToken(), callbackContext);
+                    try{
+                        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build();
+                        GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(cordovaActivity, gso);
+                        mGoogleSignInClient.signOut()
+                                .addOnCompleteListener(cordovaActivity, new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+                                    }
+                                });
+                    }catch(Exception googleSignOutException){
+                        //callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+                    }
                 } catch (Exception e) {
                     handleExceptionWithContext(e, callbackContext);
                 }
